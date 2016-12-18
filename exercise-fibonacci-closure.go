@@ -5,13 +5,13 @@ import "fmt"
 // fibonacci is a function that returns
 // a function that returns an int.
 func fibonacci() func() int {
-	oldA := 0
-	oldB := 1
+	a := 0
+	b := 1
 	return func() int {
-		newA := oldB
-		oldB = newA + oldA
-		oldA = newA
-		return newA
+		retVal := a
+		a = b
+		b = retVal + a
+		return retVal
 	}
 }
 
